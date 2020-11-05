@@ -59,11 +59,11 @@ export const burger = {
   /*Your code here*/
   discount: function(personType) {
     if (personType==="teacher" || personType==="student") {
-      console.log(0.75*burger.price)
-      return 0.75*burger.price;
+      console.log(0.75*this.price)
+      return 0.75*this.price;
     } else {
-      console.log(0.90*burger.price)
-      return 0.90*burger.price;
+      console.log(0.90*this.price)
+      return 0.90*this.price;
     }
   }
 }
