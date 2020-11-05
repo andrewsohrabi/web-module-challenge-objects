@@ -86,7 +86,11 @@ const reviews = [
 Using the reviews array above:
   1. log only Julius' feedback to the console
 */
-
+for (let i in reviews) {
+  if (reviews[i].name === "Julius") {
+    console.log(reviews[i].feedback)
+  }
+}
 
 
 
@@ -95,7 +99,9 @@ Using the reviews array above do the following:
   1. Following the same format (name, rating, feedback), add a new fictitious review object to the reviews array
   2. log the whole array to the console, make sure the new review is inside of it   
 */
-
+let newReviews = [...reviews];
+newReviews.push({name:"Andrew",rating:5,feedback:"Great drinks!"})
+console.log(newReviews)
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -103,6 +109,8 @@ Reyna's feedback is missing! Use what you know to do the following:
   1. Add this feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"
   2. log the reviews array to the console to check your work
 */
+newReviews[7].feedback="this place is chill with really cool people, great for getting work done on weekdays";
+console.log(newReviews)
 
 
 
@@ -112,14 +120,16 @@ Reyna's feedback is missing! Use what you know to do the following:
 Write a function to return a review based on the index of the review in the array.
 
 Use the getReviewByIndex function below to do the following:
-  1. Receive two arguements: the array that holds all the reviews and an index position of the review to display
+  1. Receive two arguments: the array that holds all the reviews and an index position of the review to display
   2. The function should return the following string: "{name} gave the restaurant a {rating} star review, and their feedback was: {feedback}"
   For example: getReviewByIndex(reviews,0) would return: "Daniela gave the restaurant a 5 star review, and their feedback was: Beautiful atmosphere and wonderful vegan options!"
 */
 
 
-function getReviewByIndex(/*Your code here*/) {
+function getReviewByIndex(reviewsArray,reviewIndex) {
   /*Your code here*/
+  let review = reviewsArray[reviewIndex];
+  return `${review.name} gave the restaurant a ${review.rating} star review, and their feedback was: ${review.feedback}`
 }
 
 
